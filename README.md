@@ -9,10 +9,7 @@ diferentes.
 
 ### Especificações
 - Condições climáticas das cidades `Nuuk/GL, Urubici/BR e Nairobi/KE`;
-- Temperatura em graus Celsius;
-- Umidade deve ser exibida em percentual;
-- Pressão deve ser exibida em hectoPascal;
-- Sobre as cores das temperaturas:
+- As cores das temperaturas deve seguir:
   - Igual ou abaixo de 5 graus em azul;
   - Acima de 5 graus e igual ou abaixo de 25 em laranja;
   - Acima de 25 graus em vermelho;
