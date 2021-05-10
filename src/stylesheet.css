@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Helvetica';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/helvetica.woff2") format('woff2');
+}
+
+@font-face {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/arial.woff2") format('woff2');
+}
