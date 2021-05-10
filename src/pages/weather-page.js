@@ -83,7 +83,15 @@ export default class WeatherPage extends Component {
   }
 
   componentDidMount() {
-    this.updateAllCity()
+    this.updateAllCity();
+    
+    //A cada 10 min consulta a lista de cidades novamente
+    this.intervalUpdateCity = setInterval(()=>{this.updateAllCity()}, 600000);
+  }
+
+  componentWillUnmount() {
+    //Para o timer quando o component for desacoplado (desmontado)
+    clearInterval(this.intervalUpdateCity);
   }
 
   render() {
