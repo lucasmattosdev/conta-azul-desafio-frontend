@@ -10,10 +10,7 @@ card-temperature{
   overflow: hidden;
   order: 3;
 
-  @media only screen and (max-width: 991px) {  
-    min-width: 250px;
-    width: 90%;
-    max-width: 400px;
+  @media only screen and (max-width: 991px) {
     margin: 40px auto;
   }
 
