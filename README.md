@@ -54,14 +54,33 @@ Agora seu servidor de desenvolvimento já está acessível em `localhost:3000`
 ### Preparação de Produção
 > Lembre-se de utilizar um Servidor Web apropriado para aplicações [**single-page application**](https://pt.wikipedia.org/wiki/Aplicativo_de_p%C3%A1gina_%C3%BAnica)
 
-1. Sigua os passos de **1.** ao **3.** da **Preparação de Desenvolvimento** (caso ja tenha feito, desconsidere);
-2. Iremos compilar o projeto com o comando:
+> **Observação:** Tenha executado ao menos uma vez a Preparação de Desenvolvimento antes de preparar para produção
+
+1. Iremos compilar o projeto com o comando:
 ```bash
 npm run build
 ```
-3. Copiamos os arquivos da pasta `build` localizada dentro do projeto para o servidor web
+2. Copiamos os arquivos da pasta `build` localizada dentro do projeto para o servidor web
 
 Agora sua aplicação estará disponível a partir do seu Servidor Web
+
+### Testes Automatizados
+
+> **Observação:** Tenha executado ao menos uma vez a Preparação de Desenvolvimento antes de rodar os testes
+
+1. Iremos rodar os testes com o comando
+```bash
+npm test
+```
+2. Uma primeira vez irá apresentar um menu para escolha do tipo de teste, pressione `a` para selecionar `run all tests`
+3. Aguarde o fim do processo e confira se todos os testes tiveram resultado `passed`, um exemplo abaixo:
+```Bash
+Test Suites: 4 passed, 4 total
+Tests:       7 passed, 7 total
+Snapshots:   0 total
+Time:        5.333 s
+Ran all test suites.
+```
 
 ## Licença
 © 2021 [Lucas Mattos](https://www.lucasmattos.com.br/).
