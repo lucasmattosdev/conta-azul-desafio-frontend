@@ -1,4 +1,4 @@
-import AbstractCacheService from './abstract-cache-service';
+import AbstractCacheService from '../abstract-cache-service';
 
 export default class WeatherService extends AbstractCacheService {
   constructor(){

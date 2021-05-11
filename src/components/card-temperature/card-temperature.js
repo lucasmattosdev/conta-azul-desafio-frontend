@@ -6,13 +6,12 @@ export default class CardTemperature extends Component {
     super(props);
 
     this.state = {
-      data: props.data,
-      retryCallback: props.retryCallback,
       title: props.title,
       temperature: props.temperature,
       humidity: props.humidity,
       pressure: props.pressure,
-      updatedAt: props.updatedAt
+      updatedAt: props.updatedAt,
+      retryCallback: props.retryCallback
     };
   }
 

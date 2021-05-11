@@ -22,10 +22,10 @@ export default class AbstractCacheService {
     this.get = async (path)=>{
       return new Promise(async (resolve, reject) => {
         if (hasCache('get', path)){
-          console.warn("[CACHE SERVICE] Usando cache para o endereço "+path);
+          console.log("[CACHE SERVICE] Usando cache para o endereço "+path);
           resolve(getCache('get', path));
         } else {
-          console.warn("[CACHE SERVICE] Consultando sem cache o endereço "+path);
+          console.log("[CACHE SERVICE] Consultando sem cache o endereço "+path);
           await axios.get(path).then((response)=>{
             setCache('get', path, response.data);
             resolve(response.data);

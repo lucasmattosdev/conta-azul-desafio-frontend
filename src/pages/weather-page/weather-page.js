@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Moment from 'moment';
-import CardTemperature from '../components/card-temperature/card-temperature';
-import WeatherService from '../service/weather-service'
+import CardTemperature from '../../components/card-temperature/card-temperature';
+import WeatherService from '../../service/weather-service/weather-service'
 import './weather-page.scss';
 
 export default class WeatherPage extends Component {
@@ -9,6 +9,9 @@ export default class WeatherPage extends Component {
     super(props);
 
     this.weatherService = new WeatherService();
+    /*Previnir Memory Leak fazendo que não utilize setState
+      quando component não estiver montado*/
+    this.componentIsMount = true;
     
     this.state = {
       cityList: {
@@ -57,7 +60,9 @@ export default class WeatherPage extends Component {
     this.updateDataCity = (city, value)=>{
       let cityList = {...this.state.cityList};
       cityList[city].data = value;
-      this.setState({cityList: cityList});
+      if(this.componentIsMount){
+        this.setState({cityList: cityList});   
+      }
     }
 
     this.convertStateSimpleCity = (data)=>{
@@ -90,6 +95,8 @@ export default class WeatherPage extends Component {
   }
 
   componentWillUnmount() {
+    this.componentIsMount = false;
+
     //Para o timer quando o component for desacoplado (desmontado)
     clearInterval(this.intervalUpdateCity);
   }
